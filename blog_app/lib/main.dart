@@ -1,3 +1,4 @@
+import 'package:blog_app/todo.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -48,6 +49,11 @@ class _AnaEkranState extends State<AnaEkran> {
       blogYazisi = 'Mayis göster';
     });
   }
+  ToDoApp(){
+    setState(() {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ToDoApp()),);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +74,10 @@ class _AnaEkranState extends State<AnaEkran> {
             ElevatedButton(
               onPressed: mayisGoster, 
               child: Text("Mayıs yazısı"),
+            ),
+            ElevatedButton(
+              onPressed: ToDoApp, 
+              child: Text("ToDo Uygulaması"),
             ),
           ],
         ),
